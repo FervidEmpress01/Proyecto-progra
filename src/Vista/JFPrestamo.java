@@ -29,7 +29,17 @@ public class JFPrestamo extends javax.swing.JFrame {
         mostrarTablaLibro("");
         mostrarTablaPrestamo("");
         bloquear();
+        actualizadorFecha();
         this.setLocationRelativeTo(null);
+    }
+    public void actualizadorFecha(){
+        jDCFechaPrestamo.setMinSelectableDate(new Date());
+        jDCFechaPrestamo.setMaxSelectableDate(new Date());
+        Calendar cal = Calendar.getInstance();
+        cal.add(Calendar.DAY_OF_MONTH, 3);
+        Date maxDate= cal.getTime();
+        jDCFechaDevolucion.setMaxSelectableDate(maxDate);
+        jDCFechaDevolucion.setMinSelectableDate(new Date());
     }
     
     public void mostrarTablaEstudiante(String valor){
